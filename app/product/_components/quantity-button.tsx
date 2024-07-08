@@ -3,14 +3,13 @@ import { useShoppingCart } from "@/app/context/ShoppingCartContext";
 import { Product } from "@/app/lib/products-data";
 
 type QuantityButtonProp = {
-  productType: Product | string;
+  product: Product;
 };
 
-export default function QuantityButton({ productType }: QuantityButtonProp) {
+export default function QuantityButton({ product }: QuantityButtonProp) {
   const { decreaseCartQuantity, increaseCartQuantity, getItemQuantity } =
     useShoppingCart();
 
-  const product = productType as Product;
   const quantity = getItemQuantity(product.id);
 
   return (

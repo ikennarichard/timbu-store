@@ -1,6 +1,5 @@
 "use client";
 
-import { Product } from "@/app/lib/products-data";
 import { products } from "@/app/lib/products-data";
 import Image from "next/image";
 import QuantityButton from "../_components/quantity-button";
@@ -29,9 +28,7 @@ export default function ProductPage({
       setProductName("");
     }
   };
-  const product: Product | undefined = products.find(
-    (product) => product.id === productId
-  );
+  const product = products.find((product) => product.id === productId);
   return (
     <>
       <div className="flex mt-3 pl-24 h-fit">
@@ -49,12 +46,12 @@ export default function ProductPage({
           </h3>
           <p>
             <b>Category:</b>{" "}
-            <span className="capitalize">{product?.category}</span>
+            <span className="capitalize">{product!.category}</span>
           </p>
-          <p className="max-w-[23rem]">{product?.description}</p>
+          <p className="max-w-[23rem]">{product!.description}</p>
           <div className="flex gap-5 items-center">
             <span>Quantity:</span>
-            <QuantityButton productType={productId} />
+            <QuantityButton product={product!} />
 
             <Link
               href="/checkout"
