@@ -1,3 +1,5 @@
+"use client";
+
 import { Product } from "@/app/lib/products-data";
 import { products } from "@/app/lib/products-data";
 import Image from "next/image";
@@ -6,6 +8,7 @@ import ProductItem from "@/app/component/product/ProductItem";
 import Subscribe from "@/app/component/footer/subscribe";
 import Link from "next/link";
 import { formatCurrency } from "@/app/lib/formatCurrency";
+import { useState } from "react";
 
 export default function ProductPage({
   params,
@@ -13,19 +16,31 @@ export default function ProductPage({
   params: { productId: string };
 }) {
   const { productId } = params;
+  const [description, setDescrription] = useState("");
+  const [productName, setProductName] = useState("");
 
+  const handleMouseOver = (productId: string) => {
+    const item = products.find((i) => i.id === productId);
+    if (item) {
+      setDescrription(item.description);
+      setProductName(item.name);
+    } else {
+      setDescrription("");
+      setProductName("");
+    }
+  };
   const product: Product | undefined = products.find(
     (product) => product.id === productId
   );
   return (
     <>
-      <div className="flex justify-center mt-3">
-        <div className="bg-white rounded-md p-12">
+      <div className="flex mt-3 pl-24 h-fit">
+        <div className="bg-[#EEEEEE] rounded-md h-fit p-12">
           <Image
             src={product!.image}
             alt="product image"
             width={200}
-            height={300}
+            height={200}
           />
         </div>
         <div className="basis-2/6 ps-3 flex flex-col gap-12">
@@ -36,11 +51,11 @@ export default function ProductPage({
             <b>Category:</b>{" "}
             <span className="capitalize">{product?.category}</span>
           </p>
-          <p className="w-4/6">{product?.description}</p>
+          <p className="max-w-[23rem]">{product?.description}</p>
           <div className="flex gap-5 items-center">
             <span>Quantity:</span>
-            <QuantityButton />
-            
+            <QuantityButton productType={productId} />
+
             <Link
               href="/checkout"
               className="bg-reddish text-white rounded-md px-8 py-2"
@@ -52,6 +67,43 @@ export default function ProductPage({
       </div>
 
       <div>
+        <ul className="flex flex-col gap-5 mt-7 pl-24">
+          <div className="flex gap-3 w-fit">
+            {products
+              .filter(
+                (p) => p.category === product?.category && p.id !== product.id
+              )
+              .slice(0, 2)
+              .map((p) => (
+                <li
+                  key={p.id}
+                  className="w-fit items-center cursor-pointer"
+                  onMouseOver={() => handleMouseOver(p.id)}
+                >
+                  <div className="w-[10rem] h-[200px] rounded-md flex items-center justify-center bg-[#eeeeee]">
+                    <Image
+                      src={p.image}
+                      alt="product image"
+                      width={130}
+                      height={0}
+                    />
+                  </div>
+                </li>
+              ))}
+          </div>
+          <li className="w-fit flex gap-5">
+            <div className="flex h-[30%] gap-6">
+              <h3 className="font-bold text-md">Description</h3>
+              <div className="relative w-[6px] h-[10rem] rounded-md bg-black">
+                <div className="absolute w-[6px] h-[5rem] left-0 rounded-md bg-reddish"></div>
+              </div>
+            </div>
+            <div className="w-[30%]">
+              <p className="capitalize">{productName}</p> is {description}
+            </div>
+          </li>
+        </ul>
+
         <h2 className="text-[1.2rem] text-center font-bold mt-8">
           Related products
         </h2>
