@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { poppins } from "./ui/font";
 import "./globals.css";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <ShoppingCartProvider>
+          {children}
+        </ShoppingCartProvider>
+        </body>
     </html>
   );
 }
