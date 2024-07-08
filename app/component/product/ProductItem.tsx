@@ -55,7 +55,7 @@ export default function ProductItem({ product }: { product: Product }) {
               </svg>
             </button>
           ) : (
-            <QuantityButton productType={product} />
+            <QuantityButton product={product} />
           )}
         </div>
       </div>
