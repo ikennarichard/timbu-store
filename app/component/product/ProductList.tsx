@@ -3,7 +3,7 @@ import ProductItem from "./ProductItem";
 
 export default function ProductList() {
   return (
-    <section className="pt-12">
+    <section className="pt-12" id="products">
       <h2 className="text-[2rem] font-bold text-center">Product List</h2>
       <ul className="flex flex-wrap gap-5 justify-center mt-7">
         {products.map((product) => (
