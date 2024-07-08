@@ -10,7 +10,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: '1',
-    name: "micronized creatine",
+    name: "creatine",
     price: 250,
     image: "/images/micronized-creatine.png",
     description:
@@ -19,7 +19,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
-    name: "creatine hcl",
+    name: "protein",
     price: 150,
     image: "/images/creatine-hcl.png",
     description:
@@ -28,7 +28,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: "creatine monohydrate",
+    name: "fish oil",
     price: 300,
     image: "/images/creatine-monohydrate.png",
     description:
