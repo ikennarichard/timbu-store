@@ -6,9 +6,9 @@ import clsx from "clsx";
 
 const links = [
   { name: "Products", href: "/" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "About us", href: "/#about" },
-  { name: "FAQ", href: "/#faq" },
+  { name: "Pricing", href: "#" },
+  { name: "About us", href: "#about" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export default function NavLinks() {
@@ -20,12 +20,9 @@ export default function NavLinks() {
           <li key={link.name} className="list-none">
             <Link
               href={link.href}
-              className={clsx(
-                "",
-                {
-                  "text-black font-bold": pathname === link.href,
-                }
-              )}
+              className={clsx("", {
+                "text-black font-bold": pathname === link.href,
+              })}
             >
               {link.name}
             </Link>
