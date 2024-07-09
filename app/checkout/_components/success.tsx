@@ -12,7 +12,7 @@ export default function SuccessModal({
   return (
     <>
       {isOpen && (
-        <div className="animate-fade grid place-content-center gap-3 fixed inset-0 bg-light_cyan">
+        <div className="grid place-content-center gap-3 fixed inset-0 bg-light_cyan">
           <button
             className="absolute top-2 bg-reddish text-white rounded-md py-1 px-2 right-2 font-bold"
             onClick={closeModal}
