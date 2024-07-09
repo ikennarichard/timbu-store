@@ -33,7 +33,7 @@ To run this project locally, follow these steps:
 
    ```sh
    git clone https://github.com/ikennarichard/timbu-store.git
-   cd vault-ecommerce-shop
+   cd timbu-store
    ```
 
 2. **Install dependencies**:
