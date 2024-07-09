@@ -16,7 +16,7 @@ export default function CheckoutPage() {
   return (
     <main className="bg-light_cyan min-h-screen flex flex-col justify-center overflow-x-hidden">
       <title>Checkout</title>
-      <section className="flex flex-wrap justify-center gap-3 pt-12 md:flex-col-reverse md:px-2">
+      <section className="flex justify-center gap-3 pt-12 md:flex-col-reverse pr-3 md:px-2">
         <BillingForm amount={total} />
         <ShoppingCart />
       </section>

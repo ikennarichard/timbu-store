@@ -4,16 +4,19 @@ import Image from "next/image";
 
 type CartItemProps = {
   id: string;
-  quantity: number
-}
+  quantity: number;
+};
 
 export default function CartItem({ id, quantity }: CartItemProps) {
-  const product = products.find(i => i.id === id)
+  const product = products.find((i) => i.id === id);
 
   if (product == null) return null;
   return (
     <>
-      <div className="flex justify-between items-center border-2 rounded-md p-2" key={product.id}>
+      <div
+        className="flex justify-between items-center border-2 border-gray-400 shadow-sm hover:-translate-y-[2px] hover:shadow-md transition-transform duration-300 ease-in-out rounded-md p-2"
+        key={product.id}
+      >
         <div className="flex items-center gap-4">
           <div className="bg-light_silver rounded-md p-6">
             <Image

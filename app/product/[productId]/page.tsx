@@ -33,7 +33,7 @@ export default function ProductPage({
     <>
       <div className="flex mt-3 pl-24 md:px-6 h-fit md:flex-col">
         {/* project image */}
-        <div className="bg-[#EEEEEE] rounded-md h-fit p-12 md:w-fit">
+        <div className="bg-alabaster rounded-md h-fit p-12 md:w-fit">
           <Image
             src={product!.image}
             alt="product image"
@@ -41,6 +41,7 @@ export default function ProductPage({
             height={200}
           />
         </div>
+        {/* </#project image> */}
 
         {/* product details */}
         <div className="h-fit max-w-[25rem] ps-3 pt-1 flex flex-col gap-8">
