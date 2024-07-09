@@ -21,7 +21,7 @@ export default function BillingForm({ amount }: { amount: string }) {
   };
   return (
     <>
-      <div className="flex flex-col w-[40%]">
+      <div className="flex flex-col w-[40%] md:w-full md:px-4 md:mt-4">
         <h2 className="font-semibold text-center">Billing Details</h2>
         <form
           className="flex flex-col gap-4 rounded-sm px-4 py-6 h-fit"
@@ -86,11 +86,7 @@ export default function BillingForm({ amount }: { amount: string }) {
           </div>
           <div>
             <label htmlFor="save-card" className="flex gap-2">
-              <input
-                type="checkbox"
-                id="save-card"
-                name="save-card"
-              />
+              <input type="checkbox" id="save-card" name="save-card" />
               Save my card for better checkout
             </label>
           </div>
@@ -109,7 +105,7 @@ export default function BillingForm({ amount }: { amount: string }) {
           </p>
         </form>
       </div>
-        <SuccessModal isOpen={showModal} closeModal={closeModal} />
+      <SuccessModal isOpen={showModal} closeModal={closeModal} />
     </>
   );
 }

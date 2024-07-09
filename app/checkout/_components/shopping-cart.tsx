@@ -7,7 +7,7 @@ import { totalPayment } from "@/app/lib/formatCurrency";
 export default function ShoppingCart() {
   const { cartItems } = useShoppingCart();
   return (
-    <div className="w-[40%]">
+    <div className="w-[40%] md:w-full">
       <h2 className="font-semibold text-[1rem] text-center mb-6">Your Order</h2>
       <div className="flex flex-col justify-between rounded-md border-2 px-3 pt-3 border-[#0000005d]">
         <div className="h-full w-full">
