@@ -25,7 +25,7 @@ export default function Header() {
       )}
     >
       <Logo textColor="black" />
-      <NavBar isOpen={isMenuOpen} />
+      <NavBar isOpen={isMenuOpen} handleMenuToggle={toggleMenu} />
       <div className="flex items-center gap-3">
         <CartIcon />
         <div className="flex items-center gap-2 ml-2 md:hidden">

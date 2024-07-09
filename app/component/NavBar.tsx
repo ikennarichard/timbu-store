@@ -1,7 +1,12 @@
 import NavLinks from "./NavLink";
 import clsx from "clsx";
 
-export default function NavBar({ isOpen }: { isOpen: boolean }) {
+type NavBarProps = {
+  isOpen: boolean;
+  handleMenuToggle: () => void;
+}
+
+export default function NavBar({ isOpen, handleMenuToggle }: NavBarProps) {
   return (
     <nav
       className={clsx(
@@ -10,7 +15,7 @@ export default function NavBar({ isOpen }: { isOpen: boolean }) {
       )}
     >
       <ul className="flex sm:flex-col gap-6">
-        <NavLinks />
+        <NavLinks handleMenuToggle={handleMenuToggle} />
       </ul>
     </nav>
   );

@@ -11,7 +11,11 @@ const links = [
   { name: "FAQ", href: "#faq" },
 ];
 
-export default function NavLinks() {
+type NavLinkProps = {
+  handleMenuToggle: () => void;
+}
+
+export default function NavLinks({handleMenuToggle}: NavLinkProps) {
   const pathname = usePathname();
   return (
     <>
@@ -23,6 +27,7 @@ export default function NavLinks() {
               className={clsx("", {
                 "text-black font-bold": pathname === link.href,
               })}
+              onClick={handleMenuToggle}
             >
               {link.name}
             </Link>
