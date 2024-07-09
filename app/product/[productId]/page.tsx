@@ -33,7 +33,7 @@ export default function ProductPage({
     <>
       <div className="flex mt-3 pl-24 md:px-6 h-fit md:flex-col">
         {/* project image */}
-        <div className="bg-[#EEEEEE] rounded-md h-fit p-12">
+        <div className="bg-[#EEEEEE] rounded-md h-fit p-12 md:w-fit">
           <Image
             src={product!.image}
             alt="product image"
