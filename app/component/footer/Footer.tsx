@@ -6,7 +6,7 @@ import Subscribe from "./subscribe";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark_cyan p-10 flex flex-col gap-8 mt-5">
+    <footer className="bg-dark_cyan px-8 py-12 flex flex-col gap-8 mt-5">
       <Subscribe />
       <Logo textColor="white" />
 
@@ -26,12 +26,14 @@ export default function Footer() {
             <p>Pages</p>
           </FooterListItem>
         </FooterList>
-        <FooterList heading="Contact">
-          <FooterListItem>
-            <p>Email: vault@customersupport.com</p>
-            <p>Phone: +1 856-873-008</p>
-          </FooterListItem>
-        </FooterList>
+        <div className="x-sm:hidden">
+          <FooterList heading="Contact">
+            <FooterListItem>
+              <p>Email: vault@customersupport.com</p>
+              <p>Phone: +1 856-873-008</p>
+            </FooterListItem>
+          </FooterList>
+        </div>
       </div>
       <Socials />
     </footer>
