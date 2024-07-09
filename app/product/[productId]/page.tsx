@@ -43,7 +43,7 @@ export default function ProductPage({
         </div>
 
         {/* product details */}
-        <div className="basis-2/6 ps-3 pt-3 flex flex-col gap-12">
+        <div className="h-fit max-w-[25rem] ps-3 pt-1 flex flex-col gap-8">
           <h3 className="capitalize font-semibold md:flex md:gap-3 md:text-[1.5rem]">
             <p>{product!.name}</p> <p>{formatCurrency(product!.price)}</p>
           </h3>
@@ -53,7 +53,7 @@ export default function ProductPage({
           </p>
 
           {/* description */}
-          <p className="max-w-[22rem]">{product!.description}</p>
+          <p className="max-w-full">{product!.description}</p>
 
           <div className="flex gap-5 items-center md:justify-between md:px-5">
             <span className="md:hidden">Quantity:</span>
@@ -103,7 +103,8 @@ export default function ProductPage({
               </div>
             </div>
             <div className="w-[30%]">
-              <p className="capitalize">{productName}</p> {description}
+              <p className="capitalize font-semibold">{productName}</p>{" "}
+              {description}
             </div>
           </li>
         </ul>
