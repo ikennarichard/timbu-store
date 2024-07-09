@@ -85,18 +85,19 @@ export default function ProductPage({
                   className="w-fit items-center cursor-pointer"
                   onMouseOver={() => handleMouseOver(p.id)}
                 >
-                  <div className="w-[10rem] h-[200px] rounded-md flex items-center justify-center bg-[#eeeeee]">
+                  <div className="w-[10rem] h-[200px] rounded-md flex items-center justify-center bg-[#eeeeee] relative">
                     <Image
                       src={p.image}
                       alt="product image"
                       width={130}
                       height={0}
                     />
+                    <div className="absolute inset-0 rounded-md opacity-0 bg-dark_charcoal hover:opacity-10 transition-[opacity] duration-200 ease"></div>
                   </div>
                 </li>
               ))}
           </div>
-          <li className="w-fit flex gap-5">
+          <li className="w-fit flex gap-5 md:">
             <div className="flex h-[30%] gap-6">
               <h3 className="font-bold text-md">Description</h3>
               <div className="relative w-[6px] h-[10rem] rounded-md bg-black">
