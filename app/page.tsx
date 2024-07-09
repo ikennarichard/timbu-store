@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-light_cyan gap-2">
+    <main className="flex overflow-x-hidden min-h-screen flex-col bg-light_cyan gap-2 relative z-[1]">
       <Header />
       {/* Hero */}
       <Hero />

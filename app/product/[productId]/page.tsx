@@ -31,7 +31,8 @@ export default function ProductPage({
   const product = products.find((product) => product.id === productId);
   return (
     <>
-      <div className="flex mt-3 pl-24 h-fit">
+      <div className="flex mt-3 pl-24 md:px-6 h-fit md:flex-col">
+        {/* project image */}
         <div className="bg-[#EEEEEE] rounded-md h-fit p-12">
           <Image
             src={product!.image}
@@ -40,31 +41,37 @@ export default function ProductPage({
             height={200}
           />
         </div>
-        <div className="basis-2/6 ps-3 flex flex-col gap-12">
-          <h3 className="capitalize font-semibold">
-            {product!.name} {formatCurrency(product!.price)}
+
+        {/* product details */}
+        <div className="basis-2/6 ps-3 pt-3 flex flex-col gap-12">
+          <h3 className="capitalize font-semibold md:flex md:gap-3 md:text-[1.5rem]">
+            <p>{product!.name}</p> <p>{formatCurrency(product!.price)}</p>
           </h3>
-          <p>
+          <p className="md:hidden">
             <b>Category:</b>{" "}
             <span className="capitalize">{product!.category}</span>
           </p>
-          <p className="max-w-[23rem]">{product!.description}</p>
-          <div className="flex gap-5 items-center">
-            <span>Quantity:</span>
+
+          {/* description */}
+          <p className="max-w-[22rem]">{product!.description}</p>
+
+          <div className="flex gap-5 items-center md:justify-between md:px-5">
+            <span className="md:hidden">Quantity:</span>
             <QuantityButton product={product!} />
 
             <Link
               href="/checkout"
-              className="bg-reddish text-white rounded-md px-8 py-2"
+              className="bg-reddish text-white rounded-md px-8 py-2 md:py-3 text-center"
             >
               Checkout
             </Link>
           </div>
         </div>
       </div>
+      {/* </#project details> */}
 
       <div>
-        <ul className="flex flex-col gap-5 mt-7 pl-24">
+        <ul className="flex flex-col gap-5 mt-7 pl-24 md:hidden">
           <div className="flex gap-3 w-fit">
             {products
               .filter(
@@ -96,7 +103,7 @@ export default function ProductPage({
               </div>
             </div>
             <div className="w-[30%]">
-              <p className="capitalize">{productName}</p> is {description}
+              <p className="capitalize">{productName}</p> {description}
             </div>
           </li>
         </ul>
@@ -117,7 +124,7 @@ export default function ProductPage({
         </ul>
       </div>
       <footer className="bg-dark_cyan px-10 py-20 flex flex-col gap-8 mt-8 items-center justify-center">
-        <h2 className="text-[1.8rem] font-bold">
+        <h2 className="text-[1.8rem] font-bold md:text-[1rem] md:text-center">
           SUBSCRIBE NOW For Coupons, Newsletters, And More!
         </h2>
         <Subscribe />
