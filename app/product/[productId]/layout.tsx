@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="bg-light_cyan pt-10 flex flex-col gap-6 min-h-screen overflow-x-hidden">
-      <div className="bg-[#0000008e] rounded-md py-1 w-[95%] mx-auto">
+      <div className="md:bg-[#0000008e] md:rounded-md md:py-1 md:w-[95%] md:mx-auto">
         <Header />
       </div>
       {children}
