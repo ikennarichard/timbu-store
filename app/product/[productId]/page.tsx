@@ -44,7 +44,7 @@ export default function ProductPage({
 
         {/* product details */}
         <div className="h-fit max-w-[25rem] ps-3 pt-1 flex flex-col gap-8">
-          <h3 className="capitalize border-2 font-semibold flex gap-3 md:text-[1.5rem]">
+          <h3 className="capitalize font-semibold flex gap-3 md:text-[1.5rem]">
             <p>{product!.name}</p> <p>{formatCurrency(product!.price)}</p>
           </h3>
           <p className="md:hidden">
