@@ -17,7 +17,7 @@ Vault E-commerce Shop is an e-commerce platform that offers a seamless shopping 
 ## Features
 
 - **Product Listings**: Display of various products with detailed descriptions.
-- **Shopping Cart**: Add, remove, and update products in the cart.
+- **Shopping Cart**: Add products to the cart.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ## Technologies Used
