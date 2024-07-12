@@ -2,7 +2,7 @@
 
 import { products } from "@/app/lib/products-data";
 import Image from "next/image";
-import QuantityButton from "../_components/quantity-button";
+import QuantityButton from "@/app/component/QuantiytButton";
 import ProductItem from "@/app/component/product/ProductItem";
 import Subscribe from "@/app/component/footer/subscribe";
 import Link from "next/link";

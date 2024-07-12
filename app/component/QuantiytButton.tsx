@@ -13,7 +13,7 @@ export default function QuantityButton({ product }: QuantityButtonProp) {
   const quantity = getItemQuantity(product.id);
 
   return (
-    <div className="bg-[#AEAEAE] flex items-center justify-around rounded-md w-[6rem] px-1 py-1 md:w-[7rem] md:py-2">
+    <div className="bg-[#AEAEAE] flex items-center justify-around rounded-md w-[6rem] md:w-[7rem] md:py-2">
       <button
         onClick={() => decreaseCartQuantity(product.id)}
         className="text-2xl"

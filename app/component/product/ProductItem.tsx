@@ -4,7 +4,7 @@ import Link from "next/link";
 import { formatCurrency } from "../../lib/formatCurrency";
 import { Product } from "../../lib/products-data";
 import { useShoppingCart } from "@/app/context/ShoppingCartContext";
-import QuantityButton from "@/app/product/_components/quantity-button";
+import QuantityButton from "../QuantiytButton";
 
 export default function ProductItem({ product }: { product: Product }) {
   const { getItemQuantity, increaseCartQuantity } = useShoppingCart();
@@ -46,6 +46,7 @@ export default function ProductItem({ product }: { product: Product }) {
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
+                aria-label='shopping cart icon'
               >
                 <path
                   fill="#000"
