@@ -8,7 +8,7 @@ export default function AboutUs() {
     >
       <div className="w-[65%] sm:w-[98%] text-white mx-auto md:relative md:top-[17rem]">
         <h2 className="text-[2rem] font-bold sm:text-2xl">About us</h2>
-        <p className="text-[2rem] max-w-full md:w-[88%] md:mx-auto mt-12 word md:text-[0.875rem] md:mt-[1.2rem] relative z-10">
+        <p className="text-[2rem] max-w-full md:w-[88%] md:mx-auto mt-12 word md:text-[0.875rem] md:mt-[1.2rem] relative z-[2]">
           At Vault, we&apos;re passionate about fitness and helping our
           customers achieve their goals. With years of experience in the
           industry, we understand the importance of quality supplements in
