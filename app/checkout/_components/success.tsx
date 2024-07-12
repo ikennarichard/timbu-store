@@ -25,6 +25,7 @@ export default function SuccessModal({
             height={300}
             alt=""
             className="animate-pulse"
+            priority
           />
           <h3 className="mt-3 font-semibold text-2xl">Payment Successful</h3>
         </div>
