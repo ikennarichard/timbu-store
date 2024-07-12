@@ -1,22 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { useState } from "react";
 
 const links = [
-  { name: "Products", href: "/" },
-  { name: "Pricing", href: "#" },
+  { name: "Products", href: "#products" },
+  { name: "Pricing", href: "#pricing" },
   { name: "About us", href: "#about" },
   { name: "FAQ", href: "#faq" },
 ];
 
 type NavLinkProps = {
   handleMenuToggle: () => void;
-}
+};
 
-export default function NavLinks({handleMenuToggle}: NavLinkProps) {
-  const pathname = usePathname();
+export default function NavLinks({ handleMenuToggle }: NavLinkProps) {
+  const [fragment, setFragment] = useState("#products");
+
+  const handleClick = (frag: string) => {
+    setFragment(frag);
+    handleMenuToggle();
+  };
+
   return (
     <>
       {links.map((link) => {
@@ -25,9 +31,9 @@ export default function NavLinks({handleMenuToggle}: NavLinkProps) {
             <Link
               href={link.href}
               className={clsx("", {
-                "text-black font-bold": pathname === link.href,
+                "text-black font-bold": fragment === link.href,
               })}
-              onClick={handleMenuToggle}
+              onClick={() => handleClick(link.href)}
             >
               {link.name}
             </Link>
