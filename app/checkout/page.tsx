@@ -1,25 +1,19 @@
-"use client";
-import BillingForm from "./_components/billing-form";
-import ShoppingCart from "./_components/shopping-cart";
-import { totalPayment } from "../lib/formatCurrency";
-import { useShoppingCart } from "../context/ShoppingCartContext";
-import { products } from "../lib/products-data";
+import { Metadata } from "next";
+import { getAllProducts } from "../lib/data";
+import Checkout from "./_components/checkout";
+import Logo from "../component/Logo";
 
-export default function CheckoutPage() {
-  const { cartItems } = useShoppingCart();
-  const total = totalPayment(
-    cartItems.reduce((total, cartItem) => {
-      const item = products.find((i) => i.id === cartItem.id);
-      return total + (item?.price || 0) * cartItem.quantity;
-    }, 0)
-  );
+export const metadata: Metadata = {
+  title: "Checkout",
+};
+
+export default async function CheckoutPage() {
+  const products = await getAllProducts();
+
   return (
-    <main className="bg-light_cyan min-h-screen flex flex-col justify-center overflow-x-hidden">
-      <title>Checkout</title>
-      <section className="flex justify-center gap-3 pt-12 md:flex-col-reverse pr-3 md:px-2">
-        <BillingForm amount={total} />
-        <ShoppingCart />
-      </section>
+    <main className="min-h-screen flex flex-col overflow-x-hidden pt-6 pl-3">
+      <Logo textColor="black" />
+      <Checkout products={products} />
     </main>
   );
 }
