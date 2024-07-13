@@ -1,29 +1,25 @@
 "use client";
 import { useShoppingCart } from "@/app/context/ShoppingCartContext";
-import { Product } from "@/app/lib/products-data";
+import { Product } from "@/app/lib/definitions";
 
-type QuantityButtonProp = {
-  product: Product;
-};
-
-export default function QuantityButton({ product }: QuantityButtonProp) {
+export default function QuantityButton({ product }: { product: Product }) {
   const { decreaseCartQuantity, increaseCartQuantity, getItemQuantity } =
     useShoppingCart();
 
   const quantity = getItemQuantity(product.id);
 
   return (
-    <div className="bg-[#AEAEAE] flex items-center justify-around rounded-md w-[6rem] md:w-[7rem] md:py-2">
+    <div className="bg-[#AEAEAE] flex items-center justify-between gap-4 rounded-3xl w-[5.9rem] px-3 py-1">
       <button
         onClick={() => decreaseCartQuantity(product.id)}
-        className="text-2xl"
+        className="text-lg font-semibold"
       >
         -
       </button>
       <span className="text-reddish font-bold text-xl">{quantity}</span>
       <button
         onClick={() => increaseCartQuantity(product.id)}
-        className="text-2xl"
+        className="text-lg font-semibold"
       >
         +
       </button>
