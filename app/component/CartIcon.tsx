@@ -1,16 +1,21 @@
-import Link from "next/link";
+"use client";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import Link from "next/link";
 
 export function CartIcon() {
-  const { cartQuantity } = useShoppingCart();
+  const { cartQuantity, toggleCart } = useShoppingCart();
   return (
-    <div className="relative w-10 h-10 rounded-full bg-laurel_green flex items-center justify-center sm:rounded-md sm:bg-dark_charcoal">
-      <Link href="/checkout">
+    <Link
+      href="/checkout"
+      className="relative w-10 h-10 rounded-full bg-laurel_green flex items-center justify-center sm:rounded-md sm:bg-dark_charcoal"
+    >
+      <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 256 256"
+          onClick={toggleCart}
         >
           <path
             fill="#000"
@@ -21,7 +26,7 @@ export function CartIcon() {
         <div className="absolute right-1 bottom-[2px] text-[11px] w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center p-2">
           {cartQuantity}
         </div>
-      </Link>
-    </div>
+      </button>
+    </Link>
   );
 }
