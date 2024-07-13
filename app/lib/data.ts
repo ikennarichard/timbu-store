@@ -1,7 +1,5 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
 export const getAllProducts = async () => {
   const organizationID = process.env.ORGANISATION_ID;
   const appID = process.env.APP_ID;
@@ -9,7 +7,7 @@ export const getAllProducts = async () => {
 
   try {
     const res = await fetch(
-      `https://api.timbu.cloud/products?organization_id=${organizationID}&reverse_sort=false&page=1&size=3&Appid=${appID}&Apikey=${apiKey}`
+      `https://api.timbu.cloud/products?organization_id=${organizationID}&reverse_sort=false&page=1&size=30&Appid=${appID}&Apikey=${apiKey}`
     );
     const data = await res.json();
 
