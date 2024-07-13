@@ -3,13 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatCurrency } from "@/app/lib/utils";
 import { Product } from "../../lib/definitions";
-import { useShoppingCart } from "@/app/context/ShoppingCartContext";
-import QuantityButton from "../QuantiytButton";
 
 export default function ProductItem({ product }: { product: Product }) {
-  const { getItemQuantity, increaseCartQuantity } = useShoppingCart();
 
-  const quantity = getItemQuantity(product.unique_id);
   return (
     <div className="flex flex-col items-center py-1 w-[17rem] rounded-sm h-[20rem] hover:shadow-md transition-shadow duration-200 ease-in-out">
       <div>
