@@ -18,3 +18,43 @@ html {
 body {
   min-height: 100svh;
 }
+
+.pagination-container {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  justify-content: center;
+
+  li a {
+    font-weight: 500;
+  }
+
+  li:hover {
+    cursor: pointer;
+  }
+
+  li:is(.selected) {
+    color: rgb(3, 3, 37);
+  }
+
+  li:not(.previous, .selected, .next) {
+    color: #213F7D60;
+  }
+
+  .previous-path, .next-path {
+    fill: rgb(1, 1, 61);
+  }
+
+  .previous, .next {
+    width: fit-content;
+    font-weight: bold;
+    background-color: #213F7D30;
+    padding: 0.1em 0.5em;
+    border-radius: 4px;
+  }
+
+  .previous.disabled svg path, .next.disabled svg path {
+    fill: #213F7D60;
+  }
+}
