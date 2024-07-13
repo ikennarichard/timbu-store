@@ -16,6 +16,10 @@ type ShoppingCartContext = {
   getItemQuantity: (id: string) => number;
   increaseCartQuantity: (id: string) => void;
   decreaseCartQuantity: (id: string) => void;
+  removeFromCart: (id: string) => void;
+  clearCart: () => void;
+  isCartOpen: boolean;
+  toggleCart: () => void;
 };
 
 const shoppingCartContext = createContext({} as ShoppingCartContext);
@@ -26,6 +30,11 @@ export const useShoppingCart = () => {
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen((prev) => !prev);
+  };
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -37,6 +46,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   };
 
   const increaseCartQuantity = (id: string) => {
+    console.log(cartItems);
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { id, quantity: 1 }];
@@ -67,6 +77,16 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   };
 
+  const removeFromCart = (id: string) => {
+    setCartItems((currItems) => {
+      return currItems.filter((item) => item.id !== id);
+    });
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <shoppingCartContext.Provider
       value={{
@@ -75,6 +95,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         decreaseCartQuantity,
         cartItems,
         cartQuantity,
+        removeFromCart,
+        clearCart,
+        isCartOpen,
+        toggleCart,
       }}
     >
       {children}
