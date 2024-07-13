@@ -11,7 +11,7 @@ export default function Hero() {
           </p>
         </h2>
         <div className="flex justify-center gap-5">
-          <Button text="View Product" link="#products" />
+          <Button text="View Products" link="#products" />
           <button className="px-8 py-3 font-semibold border-2 border-blue-700 text-white rounded-md hover:bg-reddish hover:border-reddish transition-colors duration-300 ease-in-out sm:text-[0.9rem]">
             Explore now
           </button>

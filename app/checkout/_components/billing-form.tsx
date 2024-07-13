@@ -21,12 +21,14 @@ export default function BillingForm({ amount }: { amount: string }) {
   };
   return (
     <>
-      <div className="flex flex-col md:w-[98%] w-[65%] md:mx-auto md:px-4 md:mt-4">
-        <h2 className="font-semibold text-center">Billing Details</h2>
+      <div className="flex flex-col md:w-[90%] w-[38rem] md:mx-auto md:px-4 md:mt-4">
         <form
           className="flex flex-col gap-4 rounded-sm px-4 py-6 h-fit"
           onSubmit={handleSubmit}
         >
+          <h2 className="uppercase tracking-wide text-[#000000b9] text-xl font-[500]">
+            Billing Details
+          </h2>
           <div>
             <label htmlFor="name" className="sr-only">
               Card Holder Name
@@ -91,10 +93,9 @@ export default function BillingForm({ amount }: { amount: string }) {
             </label>
           </div>
           <button
-            className="bg-red-700 text-white gap-3 font-[500] py-3 text-center w-full rounded-md flex items-center justify-center transistion duration-300 ease-in-out hover:brightness-110"
+            className="bg-cyan-700 text-xl uppercase text-white gap-5 font-[500] py-3 text-center w-full rounded-md flex items-center justify-center transistion duration-300 ease-in-out hover:brightness-110"
             type="submit"
           >
-            <Image src="/icons/Lock.png" width={20} height={20} alt="lock" />
             {pending ? "Processing" : `Pay  ${amount}  USD`}
           </button>
           <p className="text-lg w-[90%]">
