@@ -19,26 +19,26 @@ export default function CartItem({ id, quantity, products }: CartItemProps) {
   return (
     <>
       <div
-        className="flex justify-between items-center shadow-sm hover:shadow-md transition-transform duration-300 ease-in-out rounded-md p-2 relative"
+        className="flex justify-between items-center shadow-sm hover:shadow-md transition-transform duration-300 ease-in-out border-2 rounded-md px-3 py-3 relative"
         key={product?.id}
       >
-        <div className="flex items-center gap-4">
-          <div className="bg-light_silver rounded-md p-6">
-            <Image
-              src={`http://api.timbu.cloud/images/${product?.photos[0].url}`}
-              alt="product image"
-              width={60}
-              height={60}
-            />
-          </div>
-          <h3 className="capitalize">
-            {product?.name}
+          <div className="flex items-center gap-3 x-sm:flex-col">
+            <div className="bg-light_silver rounded-md p-6">
+              <Image
+                src={`http://api.timbu.cloud/images/${product?.photos[0].url}`}
+                alt="product image"
+                width={60}
+                height={60}
+              />
+            </div>
+            <h3 className="capitalize font-semibold">
+              {product?.name}
           </h3>
-        </div>
-        <div className="md:hidden">
-          <QuantityButton product={product!}/>
-        </div>
-        <div className="justify-self-end font-semibold">
+          </div>
+        <div className="x-sm:absolute x-sm:right-1 x-sm:top-2">
+            <QuantityButton product={product!}/>
+          </div>
+        <div className="justify-self-end font-semibold x-sm:text-2xl">
           <span>{formatCurrency(price * quantity)}</span>
         </div>
         <button

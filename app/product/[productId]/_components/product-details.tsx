@@ -31,10 +31,10 @@ export default function ProductDetails({
 
   return (
     <>
-      <div className="flex w-fit gap-8 mt-10 ml-24 md:ml-2 md:px-6 h-fit x-sm:flex-col">
+      <div className="flex w-fit h-[60%] gap-6 mt-4 ml-24 md:ml-2 md:px-6 x-sm:flex-col">
         {/* project image */}
-        <div className="bg-white rounded-md p-12 md:w-fit">
-          <Image src={photo} alt="product image" width={250} height={200} />
+        <div className="bg-white rounded-md p-12">
+          <Image src={photo} alt="product image" width={200} height={100} />
         </div>
         {/* </#project image> */}
 
@@ -46,16 +46,16 @@ export default function ProductDetails({
           </h3>
 
           {/* description */}
-          <p className="max-w-full">{product?.description}</p>
+          <p className="max-w-[20rem]">{product?.description}</p>
           <p className="font-semibold text-[1.75rem]">
             {formatCurrency(price)}
           </p>
 
-          <div className="flex gap-5 items-center mb-2 md:px-5">
+          <div className="flex gap-5 items-center mb-2">
             <QuantityButton product={product!} />
             <Link
               href="/checkout"
-              className="bg-reddish text-white rounded-md px-6 py-2 text-center opacity-100 hover:opacity-95 transition-[opacity] duration-200 ease"
+              className="bg-reddish text-white rounded-md px-6 py-1 text-center opacity-100 hover:opacity-95 transition-[opacity] duration-200 ease"
             >
               Checkout
             </Link>

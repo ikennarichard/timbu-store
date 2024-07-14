@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        "bg-[#ffffffd3] sm:bg-transparent z-10 rounded-lg flex gap-[70px] w-11/12 items-center justify-between px-8 py-4 mx-auto",
+        "bg-[#ffffffd3] sm:bg-transparent z-10 rounded-lg flex gap-[70px] w-11/12 items-center justify-between sm:px-[0.15rem] px-3 py-4 mx-auto",
         pathname === "/" && "absolute top-6 left-[4%]"
       )}
     >

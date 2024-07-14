@@ -26,7 +26,7 @@ export default function BillingForm({ amount }: { amount: string }) {
           className="flex flex-col gap-4 rounded-sm px-4 py-6 h-fit"
           onSubmit={handleSubmit}
         >
-          <h2 className="uppercase tracking-wide text-[#000000b9] text-xl font-[500]">
+          <h2 className="uppercase tracking-wide text-[#000000b9] text-xl font-semibold">
             Billing Details
           </h2>
           <div>

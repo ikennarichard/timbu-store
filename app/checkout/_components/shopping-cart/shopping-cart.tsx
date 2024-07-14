@@ -8,10 +8,10 @@ import { totalPayment } from "@/app/lib/utils";
 export default function ShoppingCart({products}: {products: Product[]}) {
   const { cartItems, clearCart } = useShoppingCart();
   return (
-    <div className="md:w-[95%] w-[55%] md:mx-auto px-8 py-5 h-full">
+    <div className="md:w-[90%] w-[55%] md:mx-auto md:px-0 px-8 py-5 h-full">
       
       <div className="flex flex-col justify-between gap-4 px-3 pt-3 border-[#0000005d]">
-        <h2 className="font-[500] text-xl text-[#000000b9] uppercase border-b-2 pb-2">Your Order</h2>
+        <h2 className="font-semibold text-xl text-[#000000b9] uppercase border-b-2 pb-2">Your Order</h2>
         <div className="h-full w-full">
           <div className="flex items-center gap-3">
             <button
@@ -32,7 +32,7 @@ export default function ShoppingCart({products}: {products: Product[]}) {
         </div>
         <div className="mt-5 border-b-2">
           <div className="flex items-center justify-between mb-3 px-3 py-2">
-            <p className="text-xl tracking-wide capitalize">subtotal</p>{" "}
+            <p className="text-xl tracking-wide capitalize font-semibold">subtotal</p>{" "}
             <p className="font-semibold">
               {totalPayment(
                 cartItems.reduce((total, cartItem) => {
@@ -46,7 +46,7 @@ export default function ShoppingCart({products}: {products: Product[]}) {
             </p>
           </div>
           <div className="flex items-center justify-between px-3 py-2 mb-5">
-            <p className="text-xl tracking-wide">TOTAL</p>{" "}
+            <p className="text-xl tracking-wide font-semibold capitalize">total</p>{" "}
             <p className="font-semibold">
               {totalPayment(
                 cartItems.reduce((total, cartItem) => {

@@ -9,17 +9,17 @@ export default function QuantityButton({ product }: { product: Product }) {
   const quantity = getItemQuantity(product.id);
 
   return (
-    <div className="bg-[#AEAEAE] flex items-center justify-between gap-4 rounded-3xl w-[5.9rem] px-3 py-1">
+    <div className="bg-[#AEAEAE] flex items-center justify-center gap-[0.2rem] w-[5rem] md:py-[0.12rem] rounded-md py-2">
       <button
         onClick={() => decreaseCartQuantity(product.id)}
-        className="text-lg font-semibold"
+        className="text-lg font-semibold w-4"
       >
         -
       </button>
-      <span className="text-reddish font-bold text-xl">{quantity}</span>
+      <span className="text-reddish w-7 text-center font-semibold text-xl">{quantity}</span>
       <button
         onClick={() => increaseCartQuantity(product.id)}
-        className="text-lg font-semibold"
+        className="text-lg font-semibold w-4"
       >
         +
       </button>
