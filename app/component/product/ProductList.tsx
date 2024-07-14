@@ -38,7 +38,7 @@ export default function ProductList({products}: { products: Product[]}) {
           </li>
         ))}
       </ul>
-      <div className="sm:hidden mt-5">
+      <div className="mt-5">
         <ReactPaginate
             breakLabel="..."
             previousLabel={<ChevronLeft/>}
