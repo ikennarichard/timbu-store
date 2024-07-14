@@ -8,7 +8,7 @@ import { totalPayment } from "@/app/lib/utils";
 export default function ShoppingCart({products}: {products: Product[]}) {
   const { cartItems, clearCart } = useShoppingCart();
   return (
-    <div className="md:w-[85%] w-[55%] md:mx-auto px-8 py-5 h-full">
+    <div className="md:w-[95%] w-[55%] md:mx-auto px-8 py-5 h-full">
       
       <div className="flex flex-col justify-between gap-4 px-3 pt-3 border-[#0000005d]">
         <h2 className="font-[500] text-xl text-[#000000b9] uppercase border-b-2 pb-2">Your Order</h2>
