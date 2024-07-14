@@ -66,7 +66,7 @@ export default function ProductDetails({
       <div className="flex items-center gap-4 w-fit ml-24 md:hidden">
         {productPhotos.map((item: { url: string }) => (
           <div
-            className="w-28 h-20 relative  border-2 border-gray-500 rounded-md"
+            className="w-20 h-16 relative  border-2 border-gray-500 rounded-md"
             key={item.url}
             onMouseOver={() => handleSetPhoto(`http://api.timbu.cloud/images/${item.url}`)}
           >
