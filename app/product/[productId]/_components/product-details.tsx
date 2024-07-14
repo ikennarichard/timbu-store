@@ -39,7 +39,7 @@ export default function ProductDetails({
         {/* </#project image> */}
 
         {/* product details */}
-        <div className="flex-1 max-w-[25rem] px-3 pt-4 flex flex-col gap-3 justify-end">
+        <div className="flex-1 max-w-[25rem] md:mb-3 px-3 pt-4 flex flex-col gap-3 justify-end">
           <p className="font-semibold uppercase text-md">{category}</p>
           <h3 className="capitalize font-semibold md:text-[2rem] text-[2.3rem]">
             {product?.name}
