@@ -24,7 +24,7 @@ export default function ProductItem({ product }: { product: Product }) {
               {product.name}
             </span>
             <span className="font-semibold text-xl text-center">
-              {formatCurrency(product.current_price[0].USD[0])}
+              {formatCurrency(product?.current_price[0].USD[0])}
             </span>
           </p>
         </Link>

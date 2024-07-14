@@ -7,7 +7,7 @@ export const getAllProducts = async () => {
 
   try {
     const res = await fetch(
-      `https://api.timbu.cloud/products?organization_id=${organizationID}&reverse_sort=false&page=1&size=30&Appid=${appID}&Apikey=${apiKey}`
+      `https://api.timbu.cloud/products?organization_id=${organizationID}&reverse_sort=false&page=1&size=30&Appid=${appID}&Apikey=${apiKey}`, { cache: 'no-store' }
     );
     const data = await res.json();
 
